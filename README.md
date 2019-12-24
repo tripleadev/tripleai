@@ -3,4 +3,5 @@
 # TripleAI
 
 TripleAI is the automated helper for the official TripleA Development Discord Server.
+
 Made by ejer#9484
