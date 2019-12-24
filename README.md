@@ -2,6 +2,6 @@
 
 # TripleAI
 
-TripleAI is the automated helper for the official TripleA Development Discord Server.
+The TripleAI bot is a virtual automated helper created to help manage and assist the users of the official TripleA Development Discord Server.
 
 Made by ejer#9484
