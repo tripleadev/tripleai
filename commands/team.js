@@ -4,10 +4,11 @@ exports.run = async (client, message, args) => {
 	let logo = client.user.avatarURL;
 	let members = message.guild.roles
 		.find(r => r.name === "Developer")
-		.members.array().length;
+		.members.array();
 	let mods = message.guild.roles
 		.find(r => r.name === "Moderator")
-		.members.array().length;
+		.members.array()
+		.filter(m => !m.user.bot);
 
 	let team = new Discord.RichEmbed()
 		.setAuthor("TripleA Development")
@@ -16,7 +17,9 @@ exports.run = async (client, message, args) => {
 		.setTimestamp()
 		.setThumbnail(logo)
 		.setDescription(
-			`Team Members - \`${members}\`\nCommunity Moderators - \`${mods}\``
+			`**Team Members: [${members.length}]**\n${members.join(
+				" • "
+			)}\n\n**Community Moderators: [${mods.length}]**\n${mods.join(" • ")}`
 		);
 
 	message.channel.send(team);
